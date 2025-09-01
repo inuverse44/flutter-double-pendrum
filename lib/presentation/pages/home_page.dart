@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rk4_solver/application/double_pendulum_controller.dart';
+import 'package:rk4_solver/presentation/pages/explain_page.dart';
 import 'package:rk4_solver/presentation/atoms.dart';
 import 'package:rk4_solver/presentation/molecules.dart';
 import 'package:rk4_solver/presentation/organisms.dart';
@@ -36,6 +37,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Double Pendulum'),
+        actions: [
+          IconButton(
+            tooltip: '二重振り子の解説',
+            icon: const Icon(Icons.menu_book_outlined),
+            onPressed: () async {
+              // 遅延 import を避けるため直接参照
+              await Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const ExplainPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: SafeArea(
         child: ListView(
