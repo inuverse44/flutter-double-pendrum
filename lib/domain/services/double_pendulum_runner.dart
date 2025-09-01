@@ -10,6 +10,19 @@ class DoublePendulumResult {
 
 class DoublePendulumRunner {
   static DoublePendulumResult run(DoublePendulumParams params) {
+    // Basic parameter validation to avoid singularities (division by zero)
+    // in the double pendulum equations.
+    // Require positive masses and lengths; non-positive values are invalid.
+    if (!(params.m1.isFinite && params.m2.isFinite && params.L1.isFinite && params.L2.isFinite)) {
+      return const DoublePendulumResult([]);
+    }
+    if (params.m1 <= 0 || params.m2 <= 0 || params.L1 <= 0 || params.L2 <= 0) {
+      return const DoublePendulumResult([]);
+    }
+    // Time and step constraints: non-positive step or invalid range yields no results.
+    if (!(params.h.isFinite) || params.h <= 0) {
+      return const DoublePendulumResult([]);
+    }
     final rows = rungeKutta4System(
       (t, y) => ode.doublePendulum(
         t,
@@ -38,4 +51,3 @@ class DoublePendulumRunner {
     return DoublePendulumResult(points);
   }
 }
-
