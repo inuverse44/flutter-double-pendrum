@@ -28,13 +28,13 @@ class ExplainPage extends StatelessWidget {
             const Card(
               child: Padding(
                 padding: EdgeInsets.all(12),
-                child: InlineMathText(r'$$\begin{aligned}
+                child: InlineMathText(r'''$$\begin{aligned}
 \mathcal{L} &= T - V,\\
 T &= \tfrac{1}{2} m_1 (L_1^2 \dot{\theta}_1^2)
    + \tfrac{1}{2} m_2 \big( L_1^2 \dot{\theta}_1^2 + L_2^2 \dot{\theta}_2^2
    + 2 L_1 L_2 \dot{\theta}_1 \dot{\theta}_2 \cos(\theta_1-\theta_2) \big),\\
 V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
-\end{aligned}$$'),
+\end{aligned}$$'''),
               ),
             ),
             const SizedBox(height: 16),
@@ -47,19 +47,19 @@ V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
             const Card(
               child: Padding(
                 padding: EdgeInsets.all(12),
-                child: InlineMathText(r'$$\begin{aligned}
+                child: InlineMathText(r'''$$\begin{aligned}
 \dot{\theta}_1 &= \omega_1, \qquad \dot{\theta}_2 = \omega_2, \\
 \dot{\omega}_1 &= \frac{-g(2m_1+m_2)\sin\theta_1 - m_2 g\sin(\theta_1-2\theta_2)
  - 2 m_2 \sin(\theta_1-\theta_2)\big( \omega_2^2 L_2 + \omega_1^2 L_1 \cos(\theta_1-\theta_2) \big)}{L_1 \big(2m_1+m_2 - m_2\cos(2\theta_1-2\theta_2)\big)}, \\
 \dot{\omega}_2 &= \frac{2\sin(\theta_1-\theta_2)\big( \omega_1^2 L_1 (m_1+m_2)
  + g (m_1+m_2)\cos\theta_1 + \omega_2^2 L_2 m_2 \cos(\theta_1-\theta_2) \big)}{L_2 \big(2m_1+m_2 - m_2\cos(2\theta_1-2\theta_2)\big)}.
-\end{aligned}$$'),
+\end{aligned}$$'''),
               ),
             ),
             const SizedBox(height: 16),
             Text('数値解法', style: textTheme.titleLarge),
             const SizedBox(height: 8),
-            const InlineMathText('本アプリでは固定刻みの 4 次ルンゲ＝クッタ法（RK4）で時間発展を計算します。刻み $h$ が小さいほど滑らかですが計算点数は増加します。'),
+            const InlineMathText(r'本アプリでは固定刻みの 4 次ルンゲ＝クッタ法（RK4）で時間発展を計算します。刻み $h$ が小さいほど滑らかですが計算点数は増加します。'),
             const SizedBox(height: 32),
           ],
         ),
