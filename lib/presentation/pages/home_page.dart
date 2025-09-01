@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rk4_solver/application/double_pendulum_controller.dart';
-import 'package:rk4_solver/presentation/molecules/playback_controls.dart';
-import 'package:rk4_solver/presentation/molecules/trail_controls.dart';
-import 'package:rk4_solver/presentation/atoms/info_chip.dart';
-import 'package:rk4_solver/presentation/molecules/double_params_form.dart';
-import 'package:rk4_solver/presentation/organisms/double_pendulum_animator.dart';
+import 'package:rk4_solver/presentation/atoms.dart';
+import 'package:rk4_solver/presentation/molecules.dart';
+import 'package:rk4_solver/presentation/organisms.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -84,25 +82,13 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             Container(
               key: _animKey,
-              child: AspectRatio(
-                aspectRatio: 1.0,
-                child: Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: result == null
-                        ? const Center(child: CircularProgressIndicator())
-                        : DoublePendulumAnimator(
-                            points: result.points,
-                            params: _controller.params,
-                            autoPlay: false,
-                            playing: _playing,
-                            speed: _speed,
-                            showTrail: _showTrail,
-                            trailCount: _trailCount,
-                          ),
-                  ),
-                ),
+              child: DoublePendulumPanel(
+                points: result?.points,
+                params: _controller.params,
+                playing: _playing,
+                speed: _speed,
+                showTrail: _showTrail,
+                trailCount: _trailCount,
               ),
             ),
             const SizedBox(height: 8),
