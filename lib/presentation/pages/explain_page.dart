@@ -26,7 +26,8 @@ class ExplainPage extends StatelessWidget {
             Text('ラグランジアン', style: textTheme.titleLarge),
             const SizedBox(height: 8),
             Card(
-              child: Padding(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(12),
                 child: Math.tex(r'''
 \begin{aligned}
@@ -45,7 +46,8 @@ V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
             const Text('状態 y = [\u03B81, \u03C91, \u03B82, \u03C92] とし、\u03B8 は角度、\u03C9 は角速度です。'),
             const SizedBox(height: 8),
             Card(
-              child: Padding(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(12),
                 child: Math.tex(r'''
 \begin{aligned}
