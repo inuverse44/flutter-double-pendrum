@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
+import 'package:rk4_solver/presentation/atoms.dart';
 
 class ExplainPage extends StatelessWidget {
   const ExplainPage({super.key});
@@ -43,34 +44,8 @@ V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
             const SizedBox(height: 16),
             Text('状態変数と運動方程式', style: textTheme.titleLarge),
             const SizedBox(height: 8),
-            RichText(
-              text: TextSpan(
-                style: textTheme.bodyMedium,
-                children: [
-                  const TextSpan(text: '状態 '),
-                  WidgetSpan(
-                    alignment: PlaceholderAlignment.baseline,
-                    baseline: TextBaseline.alphabetic,
-                    child: Math.tex(
-                      r'y=[\theta_1,\omega_1,\theta_2,\omega_2]',
-                      mathStyle: MathStyle.text,
-                    ),
-                  ),
-                  const TextSpan(text: ' とし、'),
-                  WidgetSpan(
-                    alignment: PlaceholderAlignment.baseline,
-                    baseline: TextBaseline.alphabetic,
-                    child: Math.tex(r'\theta', mathStyle: MathStyle.text),
-                  ),
-                  const TextSpan(text: ' は角度、'),
-                  WidgetSpan(
-                    alignment: PlaceholderAlignment.baseline,
-                    baseline: TextBaseline.alphabetic,
-                    child: Math.tex(r'\omega', mathStyle: MathStyle.text),
-                  ),
-                  const TextSpan(text: ' は角速度です。'),
-                ],
-              ),
+            const InlineMathText(
+              r'状態 $y=[\theta_1,\omega_1,\theta_2,\omega_2]$ とし、$\theta$ は角度、$\omega$ は角速度です。',
             ),
             const SizedBox(height: 8),
             Card(
