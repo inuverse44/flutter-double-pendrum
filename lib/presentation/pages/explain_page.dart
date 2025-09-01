@@ -29,13 +29,13 @@ class ExplainPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Math.tex(r'''
-\\begin{aligned}
+\begin{aligned}
 \mathcal{L} &= T - V,\\
 T &= \tfrac{1}{2} m_1 (L_1^2 \dot{\theta}_1^2)
    + \tfrac{1}{2} m_2 \big( L_1^2 \dot{\theta}_1^2 + L_2^2 \dot{\theta}_2^2
    + 2 L_1 L_2 \dot{\theta}_1 \dot{\theta}_2 \cos(\theta_1-\theta_2) \big),\\
 V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
-\\end{aligned}
+\end{aligned}
 ''', textStyle: textTheme.bodyLarge),
               ),
             ),
@@ -48,13 +48,13 @@ V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Math.tex(r'''
-\\begin{aligned}
+\begin{aligned}
 \dot{\theta}_1 &= \omega_1, \qquad \dot{\theta}_2 = \omega_2, \\
 \dot{\omega}_1 &= \frac{-g(2m_1+m_2)\sin\theta_1 - m_2 g\sin(\theta_1-2\theta_2)
  - 2 m_2 \sin(\theta_1-\theta_2)\big( \omega_2^2 L_2 + \omega_1^2 L_1 \cos(\theta_1-\theta_2) \big)}{L_1 \big(2m_1+m_2 - m_2\cos(2\theta_1-2\theta_2)\big)}, \\
 \dot{\omega}_2 &= \frac{2\sin(\theta_1-\theta_2)\big( \omega_1^2 L_1 (m_1+m_2)
  + g (m_1+m_2)\cos\theta_1 + \omega_2^2 L_2 m_2 \cos(\theta_1-\theta_2) \big)}{L_2 \big(2m_1+m_2 - m_2\cos(2\theta_1-2\theta_2)\big)}.
-\\end{aligned}
+\end{aligned}
 ''', textStyle: textTheme.bodyLarge),
               ),
             ),
@@ -69,4 +69,3 @@ V &= - (m_1+m_2) g L_1 \cos\theta_1 - m_2 g L_2 \cos\theta_2.
     );
   }
 }
-
