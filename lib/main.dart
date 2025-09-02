@@ -11,6 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final rounded = GoogleFonts.mPlusRounded1cTextTheme();
+    final roundedTuned = rounded.copyWith(
+      bodyMedium: rounded.bodyMedium?.copyWith(height: 1.35),
+      titleLarge: rounded.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '物理シミュレーション：二重振り子',
@@ -20,8 +26,8 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.cyan,
           brightness: Brightness.light,
         ),
-        // TeX-like serif via Google Fonts (EB Garamond as a close alternative).
-        textTheme: GoogleFonts.ebGaramondTextTheme(),
+        // Friendly rounded Japanese UI font for body/headings.
+        textTheme: roundedTuned,
         // When Latin Modern Roman is added to assets and registered in pubspec,
         // you can switch to it by setting:
         // fontFamily: 'LatinModernRoman',
